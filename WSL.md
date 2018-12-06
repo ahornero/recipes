@@ -14,8 +14,6 @@ $ cd /
 $ sudo tar vzcpf /mnt/c/wsl-backup/ubuntu_`date +%Y%m%d_%H%M%S`.tar.gz --exclude=/proc --exclude=/dev --exclude=/mnt --exclude=/media --exclude=/lost+found  --exclude=/tmp --exclude=/sys  --exclude=/run / > /mnt/c/wsl-backup/ubuntu_`date +%Y%m%d_%H%M%S`.log 2> /mnt/c/wsl-backup/ubuntu_`date +%Y%m%d_%H%M%S`.error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
-
 Source: based on [this issue
 report](https://github.com/DDoSolitary/LxRunOffline/issues/29).
 
@@ -52,3 +50,6 @@ Just open cmd.exe as adminstrator and run these commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 > net start LxssManager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Source:
+[superuser](https://superuser.com/questions/1126721/rebooting-ubuntu-on-windows-without-rebooting-windows/1347725)
