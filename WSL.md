@@ -53,3 +53,49 @@ Just open cmd.exe as adminstrator and run these commands:
 
 Source:
 [superuser](https://superuser.com/questions/1126721/rebooting-ubuntu-on-windows-without-rebooting-windows/1347725)
+
+Terminal
+--------
+
+I really like [wsl-terminal](https://github.com/goreliu/wsl-terminal) (based on
+[wsltty](https://github.com/mintty/wsltty)), but the one I like the most is
+[this one](bin/terminal.exe). Internally, it simply calls *bash.exe*, but the
+icon and name are really appreciated. To have a “Open a terminal here...” just
+modify this registry in *regedit*:
+
+>   *HKEY_CLASSES_ROOT\\Directory\\Background\\shell*
+
+>   Right-click the *shell* key and select *New -\> Key*
+
+>   Name the key: *bash*
+
+>   Select: *bash*
+
+>   Double-click *Default*, and then type: *Open a terminal here...*
+
+>   Next, right-click the *bash* key and select *New \> String value*
+
+>   Name it *Icon* and value data: c:\\bin\\terminal.ico (you can get the same
+>   icon from
+>   [IconFinder](https://www.iconfinder.com/icons/111238/red_soda_terminal_icon)
+>   and rename it)
+
+>   Next, right-click the *bash* key and select *New \> Key*
+
+>   Name it: *command*
+
+>   With the *command* key selected in the left pane, double-click *Default*,
+>   and then type: *c:\\bin\\terminal.exe*
+
+ 
+
+### Links
+
+Links I’ve found very useful:
+
+-   [Awesome WSL](https://github.com/sirredbeard/Awesome-WSL)
+
+-   [Getting Crazy with Windows Subsystem for
+    Linux](https://brianketelsen.com/getting-crazy-with-windows-subsystem-for-linux/)
+
+-   TBC...
