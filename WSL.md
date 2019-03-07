@@ -54,6 +54,23 @@ Just open cmd.exe as adminstrator and run these commands:
 Source:
 [superuser](https://superuser.com/questions/1126721/rebooting-ubuntu-on-windows-without-rebooting-windows/1347725)
 
+Reset PAM counter if user is locked
+-----------------------------------
+
+Restart WSL as explained before, and then set the default user to root (when the user is locked 'sudo' command doesn't work) running a cmd.exe:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> ubuntu.exe config --default-user root
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run a WSL terminal:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> sudo pam_tally2 -u your_user_name -r
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+And from cmd.exe again, restore the default user, with your username instead of root (as before)
+
 Terminal
 --------
 
