@@ -66,7 +66,7 @@ Restart WSL as explained before, and then set the default user to root (when the
 Run a WSL terminal:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-> sudo pam_tally2 -u your_user_name -r
+$ sudo pam_tally2 -u your_user_name -r
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 And from cmd.exe again, restore the default user, with your username instead of root (as before)
