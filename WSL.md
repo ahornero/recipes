@@ -104,7 +104,38 @@ modify this registry in *regedit*:
 >   With the *command* key selected in the left pane, double-click *Default*,
 >   and then type: *c:\\bin\\terminal.exe*
 
- 
+OpenMPI installation and running
+--------------------------------
+
+First, install the openMPI package and *mpirun*:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ sudo apt install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Optionally, you can also install *cmoka* unit testing:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ sudo apt install libcmocka-dev
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For compiling and running (3 copies from *mpirun*), find below an example (*mpicc* instead of *gcc*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ mpicc example.c -o example
+$ mpirun -n 3 example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This would return an error related to the Linux Kernel CMA support, which is not available due to restrictive ptrace settings, so you can either add the following parameter to *mpirun* or permanently set ptrace_scope to 0 (by default 1)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ mpirun --mca btl_vader_single_copy_mechanism none -n 3 example
+
+OR
+
+$ echo 0 > /proc/sys/kernel/yama/ptrace_scope
+OR
+$ sudo echo 0 > /proc/sys/kernel/yama/ptrace_scope
+OR
+$ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Links
 
