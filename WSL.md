@@ -137,6 +137,8 @@ OR
 $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+You can also find a useful guide/tutorial to start with OpenMPI [here](https://rantahar.github.io/introduction-to-mpi).
+
 ### Links
 
 Links I’ve found very useful:
