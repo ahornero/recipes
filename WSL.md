@@ -104,6 +104,19 @@ modify this registry in *regedit*:
 >   With the *command* key selected in the left pane, double-click *Default*,
 >   and then type: *c:\\bin\\terminal.exe*
 
+Config (append to .bashrc)
+--------------------------------
+
+Change directory colors:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LS_COLORS=$LS_COLORS:'ow=31:tw=31:' ; export LS_COLORS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Export display to an X server:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export DISPLAY=:0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 OpenMPI installation and running
 --------------------------------
 
